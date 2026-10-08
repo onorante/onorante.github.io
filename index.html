@@ -2,280 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Luca Onorante, macroeconomist at the European Commission's Joint Research Centre.">
-<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}</style>
-<title>Luca Onorante</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luca Onorante - personal website</title>
+<meta name="description" content="Personal website of Luca Onorante, economist at the Joint Research Centre of the European Commission.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
-<style>
-/* Layout: one centred column read like a CV; section label on the left, content on the right; stacks to one column on phones */
-:root { 
-  --bg: #F2F4F5;
-  --surface: #FFFFFF;
-  --ink: #18212A;
-  --muted: #586470;
-  --line: #D8DEE2;
-  --accent: #1E6763;
-  --chip: #E2EDEB;
-  --f-display: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #11161B; --surface: #172027; --ink: #E3E8EC; --muted: #9AA6B0;
-    --line: #29333C; --accent: #74C2BA; --chip: #1B2D2C; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #11161B; --surface: #172027; --ink: #E3E8EC; --muted: #9AA6B0;
-  --line: #29333C; --accent: #74C2BA; --chip: #1B2D2C; color-scheme: dark;
-}
-
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--f-body);
-  font-size: 16px;
-  line-height: 1.6;
-}
-.wrap {
-  max-width: 46rem;
-  margin: 0 auto;
-  padding-inline: 20px;
-  padding-block: 3.5rem 2.5rem;
-  display: grid;
-  gap: 2.75rem;
-}
-
-header { display: grid; gap: 0.6rem; }
-h1 {
-  font-family: var(--f-display);
-  font-weight: 600;
-  font-size: clamp(2.2rem, 6vw, 3rem);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  margin: 0;
-  text-wrap: balance;
-}
-.role { margin: 0; font-size: 1.1rem; font-weight: 500; }
-.meta {
-  margin: 0;
-  font-family: var(--f-mono);
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-
-.about {
-  margin: 0;
-  font-family: var(--f-display);
-  font-size: 1.2rem;
-  line-height: 1.55;
-  max-width: 62ch;
-}
-.about p { margin: 0 0 0.9em; }
-.about p:last-child { margin-bottom: 0; }
-
-section {
-  display: grid;
-  grid-template-columns: 9rem minmax(0, 1fr);
-  gap: 1.5rem;
-}
-h2 {
-  margin: 0.2rem 0 0;
-  font-family: var(--f-mono);
-  font-weight: 500;
-  font-size: 0.74rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-}
-.body { min-width: 0; display: grid; gap: 1.1rem; }
-
-.rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
-.rows li {
-  display: grid;
-  grid-template-columns: 7.5rem minmax(0, 1fr);
-  gap: 1rem;
-}
-.when {
-  font-family: var(--f-mono);
-  font-size: 0.85rem;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-  padding-top: 0.12rem;
-}
-.what { min-width: 0; }
-.what strong { display: block; font-weight: 600; }
-.what span { color: var(--muted); }
-
-.project strong { display: block; font-weight: 600; }
-.project p { margin: 0.15rem 0 0; color: var(--muted); }
-
-.jel {
-  list-style: none; margin: 0; padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5rem;
-}
-.jel li {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  background: var(--chip);
-  border-radius: 6px;
-  padding: 0.45rem 0.7rem;
-  font-size: 0.92rem;
-  min-width: 0;
-}
-.jel code {
-  font-family: var(--f-mono);
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--accent);
-}
-.note { margin: 0; font-size: 0.82rem; color: var(--muted); }
-
-.links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.85rem;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--surface);
-  color: var(--ink);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.92rem;
-}
-.links a:hover { border-color: var(--accent); color: var(--accent); }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.links a::after { content: "↗"; font-size: 0.8em; color: var(--muted); }
-
-footer {
-  font-family: var(--f-mono);
-  font-size: 0.75rem;
-  color: var(--muted);
-}
-
-@media (max-width: 640px) {
-  .wrap { padding-block: 2.5rem 2rem; gap: 2.25rem; }
-  section { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
-  .rows li { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
-  .jel { grid-template-columns: minmax(0, 1fr); }
-  .about { font-size: 1.1rem; }
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap">
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
-
-<main class="wrap">
-  <header>
-    <h1>Luca Onorante</h1>
-    <p class="role">Deputy Head of Unit, Joint Research Centre, European Commission</p>
-    <p class="meta">Directorate T · Digital Transformation and Data · Ispra, Italy</p>
-  </header>
-
-  <div class="about">
-    <p>Luca Onorante is a macroeconomist at the European Commission's Joint Research Centre (JRC). </p>
-    <p>His research covers macroeconomic forecasting and nowcasting, Bayesian econometrics, distributional analysis, and models that link housing, consumption and climate. Before joining the JRC he was an economist and senior economist at the European Central Bank, and headed the Monetary Policy Division of the Central Bank of Ireland.</p>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="bar">
+    <a class="site-title" href="/">Luca Onorante<span> · personal website</span></a>
+    <nav aria-label="Main">
+<a href="/" aria-current="page">Home</a>
+<a href="/cv/">CV</a>
+<a href="/publications/">Publications</a>
+<a href="/research/">Research</a>
+<a href="/contacts/">Contacts</a>
+    </nav>
   </div>
-
-  <section>
-    <h2>Current work</h2>
-    <div class="body">
-      <div class="project">
-        <strong>EconLab</strong>
-        <p>A cross-directorate JRC infrastructure that makes economic models and data AI-ready for EU policy analysis, with pilots on EUROMOD and RHOMOLO.</p>
-      </div>
-      <div class="project">
-        <strong>Europe Inequality Observatory</strong>
-        <p>A preparatory action developing new methodologies to measure and assess inequalities across Europe.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Fields</h2>
-    <div class="body">
-      <ul class="jel">
-        <li><code>C11</code> Bayesian analysis</li>
-        <li><code>C32</code> Time-series models</li>
-        <li><code>C53</code> Forecasting methods</li>
-        <li><code>E37</code> Macro forecasting and simulation</li>
-        <li><code>E52</code> Monetary policy</li>
-        <li><code>D31</code> Income and wealth distribution</li>
-        <li><code>R31</code> Housing markets</li>
-        <li><code>Q54</code> Climate</li>
-      </ul>
-      <p class="note">JEL classification codes</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Career</h2>
-    <div class="body">
-      <ol class="rows">
-        <li>
-          <span class="when">2019 – now</span>
-          <div class="what"><strong>European Commission, Joint Research Centre</strong><span>Deputy Head of Unit, Directorate T. Previously Head of the Nowcasting group.</span></div>
-        </li>
-        <li>
-          <span class="when">2013 – 2016</span>
-          <div class="what"><strong>Central Bank of Ireland</strong><span>Deputy Head of Research, Head of the Macro Modelling Project, then Head of the Monetary Policy Division. Member of the Eurosystem Monetary Policy Committee, 2015–2016.</span></div>
-        </li>
-        <li>
-          <span class="when">2003 – 2019</span>
-          <div class="what"><strong>European Central Bank</strong><span>Economist, then Senior Economist.</span></div>
-        </li>
-        <li>
-          <span class="when">Earlier</span>
-          <div class="what"><strong>European University Institute · UNCTAD</strong><span>Research assistant; consultant.</span></div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <div class="body">
-      <ol class="rows">
-        <li>
-          <span class="when">PhD</span>
-          <div class="what"><strong>European University Institute, Florence</strong></div>
-        </li>
-        <li>
-          <span class="when">Teaching</span>
-          <div class="what"><strong>Macroeconomics</strong><span>Free University of Bozen-Bolzano</span></div>
-        </li>
-        <li>
-          <span class="when"></span>
-          <div class="what"><strong>Advanced Macroeconomics (MSc)</strong><span>Trinity College Dublin</span></div>
-        </li>
-        <li>
-          <span class="when">Languages</span>
-          <div class="what">Italian, English</div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section>
-    <h2>Profiles</h2>
-    <div class="body">
-      <ul class="links">
-        <li><a href="https://joint-research-centre.ec.europa.eu/luca-onorante_en" target="_blank" rel="noopener">JRC profile</a></li>
-        <li><a href="https://ideas.repec.org/e/pon21.html" target="_blank" rel="noopener">Publications on RePEc</a></li>
-        <li><a href="https://cepr.org/about/people/luca-onorante" target="_blank" rel="noopener">CEPR</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <footer>Updated October 2026</footer>
+</header>
+<div class="banner" role="presentation"><div class="banner-inner"><p class="banner-kicker">Joint Research Centre · European Commission</p><p class="banner-name">Luca Onorante</p></div></div>
+<main id="main" class="content">
+<h1>Personal Website</h1>
+<p>This is a private page where I keep track of my research interests. The views expressed here are my own and do not reflect those of the European Commission, the European Central Bank or the Eurosystem.</p>
+<h2>Short bio</h2>
+<p>Luca Onorante heads the Forecasting group at the Joint Research Centre of the European Commission and co-leads the SETI (Socio-economic &amp; territorial impact) portfolio.</p>
+<p>He was Senior Economist at the European Central Bank until 2019. From 2013 to 2016 he worked at the Central Bank of Ireland as Deputy Head of Research, Head of the Macro Modelling Project and Head of Monetary Policy, and in 2015 and 2016 he was a member of the Eurosystem/ESCB Monetary Policy Committee. He was an Economist at the ECB from 2003 to 2013. Earlier, he was a research assistant at the European University Institute and a consultant at UNCTAD.</p>
+<p>He has taught macroeconomics at the University of Bolzano and advanced macroeconomics (master's level) at Trinity College Dublin. He holds a PhD from the European University Institute.</p>
+<ul class="pagelinks">
+<li><a href="/cv/">CV</a></li>
+<li><a href="/publications/">Publications</a></li>
+<li><a href="/research/">Ongoing research</a></li>
+<li><a href="/contacts/">Contacts</a></li>
+</ul>
 </main>
+<footer class="site-footer">
+  <p>Luca Onorante · Joint Research Centre, European Commission <a class="dot" href="https://sites.google.com/view/julialeblanc">.</a></p>
+</footer>
 </body>
 </html>
